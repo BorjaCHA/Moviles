@@ -1,0 +1,185 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="#0C0C0C"
+    tools:context=".Contacto">
+
+    <EditText
+        android:id="@+id/textViewMen"
+        android:layout_width="237dp"
+        android:layout_height="22dp"
+        android:layout_marginTop="29dp"
+        android:layout_marginEnd="28dp"
+        android:autofillHints=""
+        android:background="#EDE4E4"
+        android:fontFamily="sans-serif-black"
+        android:hint="@string/mensaje"
+        android:inputType="text"
+        android:textColor="#E63B3B"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seekBar"
+        tools:ignore="LabelFor,TouchTargetSizeCheck,TextContrastCheck,DuplicateSpeakableTextCheck" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="176dp"
+        android:layout_marginTop="17dp"
+        android:layout_marginEnd="163dp"
+        android:fontFamily="serif"
+        android:text="@string/contacto"
+        android:textAlignment="center"
+        android:textAllCaps="true"
+        android:textColor="#F8F6F6"
+        android:textStyle="bold|italic"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewCorreo"
+        android:layout_width="58dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="76dp"
+        android:fontFamily="casual"
+        android:text="@string/correo"
+        android:textColor="#F8F6F6"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent" />
+
+    <TextView
+        android:id="@+id/textViewAsunto2"
+        android:layout_width="58dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="43dp"
+        android:fontFamily="casual"
+        android:text="@string/asunto"
+        android:textColor="#F8F6F6"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewCorreo" />
+
+    <TextView
+        android:id="@+id/textViewMensaje"
+        android:layout_width="90dp"
+        android:layout_height="27dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="29dp"
+        android:fontFamily="casual"
+        android:text="@string/mensaje"
+        android:textColor="#F8F6F6"
+        android:textSize="16sp"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/seekBar" />
+
+    <EditText
+        android:id="@+id/textViewCor"
+        android:layout_width="233dp"
+        android:layout_height="22dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="32dp"
+        android:autofillHints=""
+        android:background="#EDE4E4"
+        android:fontFamily="sans-serif-black"
+        android:hint="@string/correo2"
+        android:inputType="text"
+        android:textColor="#E63B3B"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView"
+        tools:ignore="LabelFor,TouchTargetSizeCheck,TextContrastCheck,DuplicateSpeakableTextCheck" />
+
+    <EditText
+        android:id="@+id/textViewAsu"
+        android:layout_width="233dp"
+        android:layout_height="22dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="32dp"
+        android:autofillHints=""
+        android:background="#EDE4E4"
+        android:fontFamily="sans-serif-black"
+        android:hint="@string/asunto2"
+        android:inputType="text"
+        android:textColor="#E63B3B"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewCor"
+        tools:ignore="LabelFor,TouchTargetSizeCheck,TextContrastCheck,DuplicateSpeakableTextCheck" />
+
+    <TextView
+        android:id="@+id/textViewPun"
+        android:layout_width="233dp"
+        android:layout_height="22dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="32dp"
+        android:autofillHints=""
+        android:background="#EDE4E4"
+        android:fontFamily="sans-serif-black"
+        android:hint="@string/puntua2"
+        android:textColor="#E63B3B"
+        android:textSize="18sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewAsu"
+        tools:ignore="LabelFor,TouchTargetSizeCheck,TextContrastCheck,DuplicateSpeakableTextCheck,SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/textViewPuntuacion"
+        android:layout_width="58dp"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="43dp"
+        android:layout_marginBottom="36dp"
+        android:fontFamily="casual"
+        android:text="@string/puntua"
+        android:textColor="#F8F6F6"
+        android:textSize="14sp"
+        app:layout_constraintBottom_toTopOf="@+id/seekBar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewAsunto2"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <SeekBar
+        android:id="@+id/seekBar"
+        style="@android:style/Widget.Material.SeekBar.Discrete"
+        android:layout_width="237dp"
+        android:layout_height="22dp"
+        android:layout_marginTop="48dp"
+        android:layout_marginEnd="104dp"
+        android:background="#F8F6F6"
+        android:indeterminate="false"
+        android:isScrollContainer="false"
+        android:max="10"
+        android:progress="0"
+        app:guidelineUseRtl="false"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewPun"
+        tools:targetApi="n" />
+
+    <Button
+        android:id="@+id/buttonEnviar"
+
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="28dp"
+        android:layout_marginTop="56dp"
+        android:text="@string/enviar"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewMensaje" />
+
+    <Button
+        android:id="@+id/buttonPrin"
+        android:onClick="CambiarVentana"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="60dp"
+        android:layout_marginEnd="36dp"
+        android:text="@string/principal"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textViewMen" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>

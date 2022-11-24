@@ -1,0 +1,122 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:background="@drawable/abstract_watercolor_texture_wallpaper_background_free_vector"
+    tools:context=".Principal">
+
+    <ImageButton
+        android:id="@+id/imageButton7"
+        android:layout_width="62dp"
+        android:layout_height="49dp"
+        android:layout_marginEnd="96dp"
+        android:layout_marginBottom="84dp"
+        android:contentDescription="@string/calculadora"
+        android:onClick="cambiarCalculadora"
+        android:scaleType="fitCenter"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toStartOf="@+id/button"
+        app:srcCompat="@drawable/calculator_icon_icons_com_72046"
+        tools:ignore="UsingOnClickInXml" />
+
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="346dp"
+        android:layout_height="100dp"
+        android:layout_marginTop="16dp"
+        android:contentDescription="@string/bienvenido"
+        android:scaleType="fitXY"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.492"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/bienvenidoborja" />
+
+    <TextView
+        android:id="@+id/nombre"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="32dp"
+        android:background="#F4F0F0"
+        android:text="@string/nombre"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        tools:ignore="TextContrastCheck" />
+
+    <EditText
+        android:id="@+id/textView2"
+        android:layout_width="138dp"
+        android:layout_height="18dp"
+        android:layout_marginTop="32dp"
+        android:layout_marginEnd="137dp"
+        android:autofillHints=""
+        android:background="#F8F4F4"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/imageView"
+        tools:ignore="LabelFor,TouchTargetSizeCheck,SpeakableTextPresentCheck" />
+
+    <TextView
+        android:id="@+id/apellidos"
+        android:layout_width="58dp"
+        android:layout_height="20dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="40dp"
+        android:background="#FBFBFB"
+        android:text="@string/apellido"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/nombre" />
+
+    <EditText
+        android:id="@+id/textView3"
+        android:layout_width="138dp"
+        android:layout_height="18dp"
+        android:layout_marginTop="44dp"
+        android:layout_marginEnd="137dp"
+        android:background="#F3EDED"
+        android:importantForAutofill="no"
+        android:inputType="text"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/textView2"
+        tools:ignore="LabelFor,SpeakableTextPresentCheck,TouchTargetSizeCheck" />
+
+    <Button
+        android:id="@+id/button"
+        android:layout_width="123dp"
+        android:onClick="cambiarContacto"
+        android:layout_height="49dp"
+        android:layout_marginEnd="55dp"
+        android:layout_marginBottom="84dp"
+        android:backgroundTint="#F4EEEE"
+        android:fontFamily="cursive"
+        android:foregroundGravity="fill_horizontal"
+        android:foregroundTint="#0C0C0C"
+        android:foregroundTintMode="add"
+        android:freezesText="false"
+        android:text="@string/contacto"
+        android:textColor="#232222"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        tools:ignore="TouchTargetSizeCheck,UsingOnClickInXml" />
+
+    <ImageView
+        android:id="@+id/imageView2"
+        android:layout_width="363dp"
+        android:layout_height="121dp"
+        android:layout_marginTop="63dp"
+        android:layout_marginBottom="186dp"
+        android:contentDescription="@string/imagen"
+        android:scaleType="fitXY"
+        app:layout_constraintBottom_toTopOf="@+id/imageButton7"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.466"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/apellidos"
+        app:layout_constraintVertical_bias="0.688"
+        app:srcCompat="@drawable/mejores_plataformas_hibridas_apps_moviles"
+        tools:ignore="ImageContrastCheck" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
