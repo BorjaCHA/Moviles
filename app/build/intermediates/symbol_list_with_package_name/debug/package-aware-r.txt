@@ -2464,6 +2464,7 @@ dimen tooltip_precise_anchor_threshold
 dimen tooltip_vertical_padding
 dimen tooltip_y_offset_non_touch
 dimen tooltip_y_offset_touch
+drawable _4206
 drawable abc_ab_share_pack_mtrl_alpha
 drawable abc_action_bar_item_background_material
 drawable abc_btn_borderless_material
@@ -2650,6 +2651,9 @@ id BOTTOM_START
 id CTRL
 id FUNCTION
 id META
+id MnOp1
+id MnOp2
+id MnOp3
 id NO_DEBUG
 id SHIFT
 id SHOW_ALL
@@ -2724,7 +2728,6 @@ id animateToEnd
 id animateToStart
 id antiClockwise
 id anticipate
-id apellidos
 id arc
 id asConfigured
 id async
@@ -2895,6 +2898,8 @@ id image
 id imageButton7
 id imageView
 id imageView2
+id imageView3
+id imageView4
 id immediateStop
 id included
 id indeterminate
@@ -3109,8 +3114,6 @@ id textSpacerNoTitle
 id textStart
 id textTop
 id textView
-id textView2
-id textView3
 id textViewAsu
 id textViewAsunto2
 id textViewCor
@@ -3366,6 +3369,7 @@ layout select_dialog_item_material
 layout select_dialog_multichoice_material
 layout select_dialog_singlechoice_material
 layout support_simple_spinner_dropdown_item
+menu menuprin
 mipmap ic_launcher
 mipmap ic_launcher_round
 plurals mtrl_badge_content_description
@@ -3413,6 +3417,7 @@ string appbar_scrolling_view_behavior
 string asunto
 string asunto2
 string bienvenido
+string borja_chacon_alvarez
 string borrar
 string bottom_sheet_behavior
 string bottomsheet_action_collapse

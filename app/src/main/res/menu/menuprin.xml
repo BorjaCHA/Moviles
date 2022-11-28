@@ -1,0 +1,7 @@
+<?xml version="1.0" encoding="utf-8"?>
+<menu xmlns:android="http://schemas.android.com/apk/res/android">
+    <item android:id="@+id/MnOp1" android:title="Calculadora" > </item>
+    <item android:id="@+id/MnOp2" android:title="Contacto"></item>
+    <item android:id="@+id/MnOp3" android:title="Principal"></item>
+
+</menu>

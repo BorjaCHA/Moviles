@@ -1,8 +1,14 @@
 package com.example.chaconborja1eva;
 
+import android.content.Intent;
 import android.os.Bundle;
+import android.view.ContextMenu;
+import android.view.Menu;
+import android.view.MenuInflater;
+import android.view.MenuItem;
 import android.view.View;
 import android.widget.Button;
+import android.widget.ImageView;
 import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
@@ -27,6 +33,7 @@ public class Calculadora extends AppCompatActivity  {
  Button btonMultiplicacion;
  Button btonBorrar;
  Button btonIgual;
+ ImageView etiqueta;
  ExpresionRegular expresionRegular;
 
 
@@ -42,6 +49,8 @@ int operador ;
         setContentView(R.layout.activity_calculadora);
         textResultado = findViewById(R.id.textResult);
         expresionRegular = new ExpresionRegular();
+        etiqueta = (ImageView) findViewById(R.id.imageView3);
+        registerForContextMenu(etiqueta);
 
         btonCero = findViewById(R.id.buttonCero);
         btonCero.setOnClickListener(new View.OnClickListener() {
@@ -271,5 +280,38 @@ int operador ;
         || idBotonActual == R.id.buttonMul){
             clickSeparadorDecimal = false;
         }
+    }
+
+    @Override
+    public void onCreateContextMenu(ContextMenu menu, View v, ContextMenu.ContextMenuInfo menuInfo) {
+        super.onCreateContextMenu(menu, v, menuInfo);
+        menu.setHeaderTitle("SELECCIONE LA PANTALLA DONDE QUIERA IR ");
+        MenuInflater inflate = getMenuInflater();
+        inflate.inflate(R.menu.menuprin, menu);
+    }
+
+
+    @Override
+    public boolean onContextItemSelected(MenuItem item) {
+        switch (item.getItemId()) {
+            case R.id.MnOp1:
+                Intent intent1 = new Intent(getApplicationContext(), Calculadora.class);
+                startActivity(intent1);
+                return true;
+
+            case R.id.MnOp2:
+                Intent intent2 = new Intent(getApplicationContext(), Contacto.class);
+                startActivity(intent2);
+                return true;
+
+            case R.id.MnOp3:
+                Intent intent3 = new Intent(getApplicationContext(), Principal.class);
+                startActivity(intent3);
+                return true;
+            default:
+                return super.onOptionsItemSelected(item);
+
+        }
+
     }
 }
