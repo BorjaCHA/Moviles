@@ -34,7 +34,7 @@ public class Contacto extends AppCompatActivity {
         setContentView(R.layout.activity_contacto);
         etiqueta = (ImageView) findViewById(R.id.imageView4);
         registerForContextMenu(etiqueta);
-        btonPrin = findViewById(R.id.buttonPrin);
+
         miControl = findViewById(R.id.seekBar);
         incial = findViewById(R.id.textViewCor);
         puntu = findViewById(R.id.textViewPun);
@@ -62,72 +62,22 @@ public class Contacto extends AppCompatActivity {
         enviar.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                String errores = "";
+                Intent intent = new Intent(Intent.ACTION_SEND);
 
                 String enviarCorreo = incial.getText().toString();
-                if (enviarCorreo.isEmpty() || !enviarCorreo.contains("@") || enviarCorreo.length() < 4) {
-                    errores = "INTRODUCE UNA DIRECCION CORRECTA";
-                    incial.setText("");
-
-                }
-
                 String enviarAsunto = asunto.getText().toString();
                 String enviarMensaje = mensaje.getText().toString() + "\n Puntuacion: " + String.valueOf(puntu.getText());
 
-                if (errores.isEmpty()) {
-                    if (asunto.length() < 1) {
-                        AlertDialog.Builder alerta = new AlertDialog.Builder(Contacto.this);
-                        alerta.setMessage("DESEA ENVIAR EL CORREO SIN ASUNTO")
-                                .setCancelable(true)
-                                .setPositiveButton("si", new DialogInterface.OnClickListener() {
-                                    @Override
-                                    public void onClick(DialogInterface dialog, int i) {
-                                        Intent intent = new Intent(android.content.Intent.ACTION_SEND);
+                intent.putExtra(Intent.EXTRA_EMAIL, new String[]{enviarCorreo});
+                intent.putExtra(Intent.EXTRA_SUBJECT, enviarAsunto);
+                intent.putExtra(Intent.EXTRA_TEXT, enviarMensaje);
 
-                                        intent.setAction(Intent.ACTION_SEND);
-                                        intent.setType("meesage/rfc822");
-
-
-                                        intent.putExtra(Intent.EXTRA_EMAIL, new String[]{enviarCorreo});
-
-                                        intent.putExtra(Intent.EXTRA_SUBJECT, enviarAsunto);
-                                        intent.putExtra(Intent.EXTRA_TEXT, enviarMensaje);
-
-                                        startActivity(Intent.createChooser(intent, "Send mail..."));
-
-
-                                        finish();
-                                        Log.e("Test email:", "Fin envio email");
-                                    }
-                                })
-                                .setNegativeButton("No", new DialogInterface.OnClickListener() {
-                                    @Override
-                                    public void onClick(DialogInterface dialog, int which) {
-                                        dialog.cancel();
-                                    }
-                                });
-                        AlertDialog titulo = alerta.create();
-                        titulo.setTitle(errores);
-                        titulo.show();
-
-                    } else {
-                        AlertDialog.Builder alerta2 = new AlertDialog.Builder(Contacto.this);
-                        alerta2.setMessage(errores + " Desea continuar")
-                                .setCancelable(true)
-                                .setPositiveButton("si", new DialogInterface.OnClickListener() {
-                                    @Override
-                                    public void onClick(DialogInterface dialog, int i) {
-                                        finish();
-                                    }
-                                })
-                                .setNegativeButton("No", new DialogInterface.OnClickListener() {
-                                    @Override
-                                    public void onClick(DialogInterface dialog, int which) {
-                                        dialog.cancel();
-                                    }
-                                });
-
-                    }
+                if(enviarCorreo.equals("") || enviarAsunto.equals("") || enviarMensaje.toString().equals("")){
+                    Toast.makeText(Contacto.this, "FALTAN CAMPOS OBLIGATORIOS (CORREO, ASUNTO O MENSAJE)", Toast.LENGTH_LONG).show();
+                }
+                else {
+                    intent.setType("message/rfc822");
+                    startActivity(Intent.createChooser(intent, "ELIJA LA APLICACION PARA ENVIAR EL CORREO : "));
                 }
 
             }
@@ -170,6 +120,13 @@ public class Contacto extends AppCompatActivity {
 
         }
 
+    }
+
+    @Override
+    protected void onRestart() {
+        super.onRestart();
+        Intent volver = new Intent(this, Principal.class);
+        startActivity(volver);
     }
 
 

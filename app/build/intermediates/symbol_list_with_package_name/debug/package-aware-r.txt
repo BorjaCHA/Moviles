@@ -2760,7 +2760,6 @@ id buttonMul
 id buttonNueve
 id buttonOcho
 id buttonPanel
-id buttonPrin
 id buttonRest
 id buttonSeis
 id buttonSiete
@@ -3481,6 +3480,7 @@ string material_timepicker_pm
 string material_timepicker_select_time
 string material_timepicker_text_input_mode_description
 string mensaje
+string menu
 string mtrl_badge_numberless_content_description
 string mtrl_checkbox_button_icon_path_checked
 string mtrl_checkbox_button_icon_path_group_name

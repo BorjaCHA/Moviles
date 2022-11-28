@@ -31,7 +31,6 @@ id buttonInv
 id buttonMul
 id buttonNueve
 id buttonOcho
-id buttonPrin
 id buttonRest
 id buttonSeis
 id buttonSiete
@@ -100,6 +99,7 @@ string igual
 string imagen
 string inv
 string mensaje
+string menu
 string nombre
 string para
 string principal

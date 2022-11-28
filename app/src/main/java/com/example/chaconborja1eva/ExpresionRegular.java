@@ -3,11 +3,8 @@ package com.example.chaconborja1eva;
 import java.util.regex.Matcher;
 import java.util.regex.Pattern;
 
-/**
- * Created by Rafael Guillermo Blanco Banquez <rafael.blanco@excelentasas.com> on 18/11/2019.
- *
- * @Autor Rafael Guillermo Blanco Banquez <rafael.blanco@excelentasas.com>
- */
+
+
 public class ExpresionRegular {
 
     /**
