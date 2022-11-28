@@ -256,6 +256,14 @@ int operador ;
 
 
     }
+    public void invertir(View view) {
+        String invertir = "";
+        for (int i = textResultado.length() - 1; i >= 0; i--) {
+            invertir += textResultado.getText().charAt(i);
+        }
+        textResultado.setText(invertir);
+    }
+
 
 
     private void accionesActuales (int idBotonActual){
