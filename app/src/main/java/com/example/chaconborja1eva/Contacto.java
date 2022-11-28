@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity;
 
 import android.content.DialogInterface;
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.util.Log;
 import android.view.ContextMenu;
@@ -101,14 +102,19 @@ public class Contacto extends AppCompatActivity {
     @Override
     public boolean onContextItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.MnOp1:
+            case R.id.MnOp1_1:
                 Intent intent1 = new Intent(getApplicationContext(), Calculadora.class);
                 startActivity(intent1);
                 return true;
-
-            case R.id.MnOp2:
+            case R.id.MnOp1_2:
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://web2.0calc.es")));
+                return true;
+            case R.id.MnOp2_1:
                 Intent intent2 = new Intent(getApplicationContext(), Contacto.class);
                 startActivity(intent2);
+                return true;
+            case R.id.MnOp2_2:
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.gmail.com/mail/help/intl/es/about.html?iframe")));
                 return true;
 
             case R.id.MnOp3:
@@ -119,7 +125,6 @@ public class Contacto extends AppCompatActivity {
                 return super.onOptionsItemSelected(item);
 
         }
-
     }
 
     @Override

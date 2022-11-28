@@ -2652,7 +2652,11 @@ id CTRL
 id FUNCTION
 id META
 id MnOp1
+id MnOp1_1
+id MnOp1_2
 id MnOp2
+id MnOp2_1
+id MnOp2_2
 id MnOp3
 id NO_DEBUG
 id SHIFT
@@ -2751,6 +2755,7 @@ id buttonBorrar
 id buttonCero
 id buttonCinco
 id buttonComa
+id buttonCuadrado
 id buttonCuatro
 id buttonDiv
 id buttonEnviar
@@ -3435,6 +3440,7 @@ string contrase_a
 string contrase_a1
 string correo
 string correo2
+string cuadrado
 string dividir
 string enviar
 string error_a11y_label

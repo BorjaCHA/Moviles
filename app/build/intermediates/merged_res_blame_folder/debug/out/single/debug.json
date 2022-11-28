@@ -36,10 +36,6 @@
         "source": "C:\\Users\\Borja Chacon\\.gradle\\daemon\\7.4\\com.example.chaconborja1eva.app-main-31:\\mipmap-mdpi\\ic_launcher_round.webp"
     },
     {
-        "merged": "com.example.chaconborja1eva.app-merged_res-29:/layout_activity_calculadora.xml.flat",
-        "source": "com.example.chaconborja1eva.app-main-31:/layout/activity_calculadora.xml"
-    },
-    {
         "merged": "C:\\Users\\Borja Chacon\\.gradle\\daemon\\7.4\\com.example.chaconborja1eva.app-merged_res-29:\\drawable_calculator_icon_icons_com_72046.png.flat",
         "source": "C:\\Users\\Borja Chacon\\.gradle\\daemon\\7.4\\com.example.chaconborja1eva.app-main-31:\\drawable\\calculator_icon_icons_com_72046.png"
     },
@@ -62,6 +58,10 @@
     {
         "merged": "C:\\Users\\Borja Chacon\\.gradle\\daemon\\7.4\\com.example.chaconborja1eva.app-merged_res-29:\\drawable-anydpi-v24_ic_launcher_foreground.xml.flat",
         "source": "C:\\Users\\Borja Chacon\\.gradle\\daemon\\7.4\\com.example.chaconborja1eva.app-pngs-24:\\drawable-anydpi-v24\\ic_launcher_foreground.xml"
+    },
+    {
+        "merged": "com.example.chaconborja1eva.app-merged_res-29:/menu_menuprin.xml.flat",
+        "source": "com.example.chaconborja1eva.app-main-31:/menu/menuprin.xml"
     },
     {
         "merged": "C:\\Users\\Borja Chacon\\.gradle\\daemon\\7.4\\com.example.chaconborja1eva.app-merged_res-29:\\xml_backup_rules.xml.flat",

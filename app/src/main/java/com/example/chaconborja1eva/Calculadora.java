@@ -1,9 +1,9 @@
 package com.example.chaconborja1eva;
 
 import android.content.Intent;
+import android.net.Uri;
 import android.os.Bundle;
 import android.view.ContextMenu;
-import android.view.Menu;
 import android.view.MenuInflater;
 import android.view.MenuItem;
 import android.view.View;
@@ -13,34 +13,34 @@ import android.widget.TextView;
 
 import androidx.appcompat.app.AppCompatActivity;
 
-public class Calculadora extends AppCompatActivity  {
+public class Calculadora extends AppCompatActivity {
 
- TextView textResultado;
- Button btonCero;
- Button btonUno;
- Button btonDos;
- Button btonTres;
- Button btonCuatro;
- Button btonCinco;
- Button btonSeis;
- Button btonSiete;
- Button btonOcho;
- Button btonNueve;
- Button btonComa;
- Button btonMas;
- Button btonMenos;
- Button btonDivision;
- Button btonMultiplicacion;
- Button btonBorrar;
- Button btonIgual;
- ImageView etiqueta;
- ExpresionRegular expresionRegular;
+    TextView textResultado;
+    Button btonCero;
+    Button btonUno;
+    Button btonDos;
+    Button btonTres;
+    Button btonCuatro;
+    Button btonCinco;
+    Button btonSeis;
+    Button btonSiete;
+    Button btonOcho;
+    Button btonNueve;
+    Button btonComa;
+    Button btonMas;
+    Button btonMenos;
+    Button btonDivision;
+    Button btonMultiplicacion;
+    Button btonBorrar;
+    Button btonIgual;
+    Button btonCuadrado;
+    ImageView etiqueta;
+    ExpresionRegular expresionRegular;
 
 
+    boolean clickSignoMas, clickSignoMenos, clickSignoDivision, clickSignoMultiplicacion, clickSeparadorDecimal;
 
-boolean clickSignoMas, clickSignoMenos, clickSignoDivision, clickSignoMultiplicacion, clickSeparadorDecimal;
-
-int operador ;
+    int operador;
 
 
     @Override
@@ -105,7 +105,7 @@ int operador ;
                 accionesActuales(R.id.buttonCinco);
             }
         });
-        btonSeis= findViewById(R.id.buttonSeis);
+        btonSeis = findViewById(R.id.buttonSeis);
         btonSeis.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -155,12 +155,12 @@ int operador ;
             @Override
             public void onClick(View v) {
                 String textoAnterior = textResultado.getText().toString();
-                if (textoAnterior.length() > 0 && clickSignoMas == false){
+                if (textoAnterior.length() > 0 && clickSignoMas == false) {
 
-                    if( textoAnterior.endsWith("x")
-                    || textoAnterior.endsWith("/")
-                    || textoAnterior.endsWith("-")){
-                        textoAnterior = textoAnterior.substring(0,textoAnterior.length()-1);
+                    if (textoAnterior.endsWith("x")
+                            || textoAnterior.endsWith("/")
+                            || textoAnterior.endsWith("-")) {
+                        textoAnterior = textoAnterior.substring(0, textoAnterior.length() - 1);
                         textResultado.setText(textoAnterior);
                     }
                     textResultado.setText(textoAnterior + "+");
@@ -174,11 +174,11 @@ int operador ;
             @Override
             public void onClick(View v) {
                 String textoAnterior = textResultado.getText().toString();
-                if (clickSignoMenos == false){
-                    if( textoAnterior.endsWith("x")
+                if (clickSignoMenos == false) {
+                    if (textoAnterior.endsWith("x")
                             || textoAnterior.endsWith("/")
-                            || textoAnterior.endsWith("+")){
-                        textoAnterior = textoAnterior.substring(0,textoAnterior.length()-1);
+                            || textoAnterior.endsWith("+")) {
+                        textoAnterior = textoAnterior.substring(0, textoAnterior.length() - 1);
                         textResultado.setText(textoAnterior);
                     }
                     textResultado.setText(textoAnterior + "-");
@@ -193,11 +193,11 @@ int operador ;
             @Override
             public void onClick(View v) {
                 String textoAnterior = textResultado.getText().toString();
-                if (clickSignoMultiplicacion == false){
-                    if( textoAnterior.endsWith("+")
+                if (clickSignoMultiplicacion == false) {
+                    if (textoAnterior.endsWith("+")
                             || textoAnterior.endsWith("/")
-                            || textoAnterior.endsWith("-")){
-                        textoAnterior = textoAnterior.substring(0,textoAnterior.length()-1);
+                            || textoAnterior.endsWith("-")) {
+                        textoAnterior = textoAnterior.substring(0, textoAnterior.length() - 1);
                         textResultado.setText(textoAnterior);
                     }
                     textResultado.setText(textoAnterior + "x");
@@ -212,11 +212,11 @@ int operador ;
             @Override
             public void onClick(View v) {
                 String textoAnterior = textResultado.getText().toString();
-                if (clickSignoDivision == false){
-                    if( textoAnterior.endsWith("x")
+                if (clickSignoDivision == false) {
+                    if (textoAnterior.endsWith("x")
                             || textoAnterior.endsWith("+")
-                            || textoAnterior.endsWith("-")){
-                        textoAnterior = textoAnterior.substring(0,textoAnterior.length()-1);
+                            || textoAnterior.endsWith("-")) {
+                        textoAnterior = textoAnterior.substring(0, textoAnterior.length() - 1);
                         textResultado.setText(textoAnterior);
                     }
                     textResultado.setText(textoAnterior + "/");
@@ -231,12 +231,21 @@ int operador ;
             @Override
             public void onClick(View v) {
                 String textoAnterior = textResultado.getText().toString();
-                if (clickSeparadorDecimal == false){
+                if (clickSeparadorDecimal == false) {
                     textResultado.setText(textoAnterior + ".");
-                    clickSeparadorDecimal= true;
+                    clickSeparadorDecimal = true;
                     accionesActuales(R.id.buttonComa);
                 }
 
+            }
+        });
+        btonCuadrado = findViewById(R.id.buttonCuadrado);
+        btonCuadrado.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Double textoAnterior = Double.parseDouble(textResultado.getText().toString());
+                String resultado = String.valueOf((textoAnterior) * (textoAnterior));
+                textResultado.setText(resultado);
             }
         });
         btonIgual = findViewById(R.id.buttonIg);
@@ -244,9 +253,9 @@ int operador ;
             @Override
             public void onClick(View v) {
                 String textoAnterior = textResultado.getText().toString();
-                if (textoAnterior.trim().length()>0){
-                     String resultado = expresionRegular.resolverFormula(textoAnterior.trim());
-                     textResultado.setText(resultado);
+                if (textoAnterior.trim().length() > 0) {
+                    String resultado = expresionRegular.resolverFormula(textoAnterior.trim());
+                    textResultado.setText(resultado);
                 }
                 accionesActuales(R.id.buttonIg);
 
@@ -254,38 +263,38 @@ int operador ;
         });
 
 
-
     }
+
     public void invertir(View view) {
         String invertir = "";
         for (int i = textResultado.length() - 1; i >= 0; i--) {
             invertir += textResultado.getText().charAt(i);
         }
+
         textResultado.setText(invertir);
     }
 
 
-
-    private void accionesActuales (int idBotonActual){
-        if (idBotonActual != R.id.buttonSum){
+    private void accionesActuales(int idBotonActual) {
+        if (idBotonActual != R.id.buttonSum) {
             clickSignoMas = false;
         }
-        if(idBotonActual != R.id.buttonRest){
+        if (idBotonActual != R.id.buttonRest) {
             clickSignoMenos = false;
 
         }
-        if(idBotonActual != R.id.buttonMul){
+        if (idBotonActual != R.id.buttonMul) {
             clickSignoMultiplicacion = false;
 
         }
-        if(idBotonActual != R.id.buttonDiv){
+        if (idBotonActual != R.id.buttonDiv) {
             clickSignoDivision = false;
 
         }
-        if ( idBotonActual == R.id.buttonRest
-        || idBotonActual == R.id.buttonSum
-        || idBotonActual == R.id.buttonDiv
-        || idBotonActual == R.id.buttonMul){
+        if (idBotonActual == R.id.buttonRest
+                || idBotonActual == R.id.buttonSum
+                || idBotonActual == R.id.buttonDiv
+                || idBotonActual == R.id.buttonMul) {
             clickSeparadorDecimal = false;
         }
     }
@@ -302,14 +311,19 @@ int operador ;
     @Override
     public boolean onContextItemSelected(MenuItem item) {
         switch (item.getItemId()) {
-            case R.id.MnOp1:
+            case R.id.MnOp1_1:
                 Intent intent1 = new Intent(getApplicationContext(), Calculadora.class);
                 startActivity(intent1);
                 return true;
-
-            case R.id.MnOp2:
+            case R.id.MnOp1_2:
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://web2.0calc.es")));
+                return true;
+            case R.id.MnOp2_1:
                 Intent intent2 = new Intent(getApplicationContext(), Contacto.class);
                 startActivity(intent2);
+                return true;
+            case R.id.MnOp2_2:
+                startActivity(new Intent(Intent.ACTION_VIEW, Uri.parse("https://www.gmail.com/mail/help/intl/es/about.html?iframe")));
                 return true;
 
             case R.id.MnOp3:
@@ -320,6 +334,5 @@ int operador ;
                 return super.onOptionsItemSelected(item);
 
         }
-
     }
 }

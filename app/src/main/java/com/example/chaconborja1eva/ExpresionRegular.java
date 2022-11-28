@@ -22,16 +22,14 @@ public class ExpresionRegular {
 
         Pattern p = Pattern.compile("([-]{1}[\\d]+\\.[\\d]+|[\\d]+\\.[\\d]+|-[\\d]+|[\\d]+)(\\" + operacionExpresion + ")(-[\\d]+\\.[\\d]+|[\\d]+\\.[\\d]+|[\\d]+)");
         Matcher m = p.matcher(expresionMatematica);
-        //2+5*4*6
-        //2+20*6
-        //2+120
-        //122
+
         if ( m.find() ) {
 
             System.out.println("Fraccion:"+m.group());
             System.out.println("Num1:"+m.group(1));
             System.out.println("OperadorEncontrado:"+m.group(2));
             System.out.println("Num2:"+m.group(3));
+
 
             double num1 = Double.parseDouble(m.group(1));
             char operacion = m.group(2).charAt(0);

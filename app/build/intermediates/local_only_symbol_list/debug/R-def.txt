@@ -16,13 +16,18 @@ drawable ic_launcher_background
 drawable ic_launcher_foreground
 drawable mejores_plataformas_hibridas_apps_moviles
 id MnOp1
+id MnOp1.1
+id MnOp1.2
 id MnOp2
+id MnOp2.1
+id MnOp2.2
 id MnOp3
 id button
 id buttonBorrar
 id buttonCero
 id buttonCinco
 id buttonComa
+id buttonCuadrado
 id buttonCuatro
 id buttonDiv
 id buttonEnviar
@@ -93,6 +98,7 @@ string contrase_a
 string contrase_a1
 string correo
 string correo2
+string cuadrado
 string dividir
 string enviar
 string igual
